@@ -12,9 +12,7 @@ const useFetch = <T>(fetchFn: () => Promise<T>, autoFetch: boolean = true) => {
 
             const result = await fetchFn();
 
-            if (result) {
-                setData(result);
-            }
+            setData(result);
         } catch (err) {
             setError(err instanceof Error ? err : new Error('An unknown error occurred'));
         } finally {
